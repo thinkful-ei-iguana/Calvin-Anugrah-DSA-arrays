@@ -38,10 +38,10 @@ function main() {
   //   console.log("arr is: ", arr);
 
   // -------Drill 4-------
-  console.log(arr.get(0));
+  // console.log(arr.get(0));
   arr.length = 0;
   arr.push(25);
-  console.log(arr.get(0));
+  // console.log(arr.get(0));
 
   // Empty the array and add just 1 item: arr.push("tauhida");
   // Print this 1 item that you just added. What is the result? Can you explain your result?
@@ -69,8 +69,8 @@ function main() {
     return stringReplaced;
     // input has any space characters, replace with %20
   };
-  console.log(spaceReplace("Tauhida Parveen"));
-  console.log(spaceReplace("www.thinkful.com /tauh ida parv een"));
+  // console.log(spaceReplace("Tauhida Parveen"));
+  // console.log(spaceReplace("www.thinkful.com /tauh ida parv een"));
   // Input: tauhida parveen
   // Output: tauhida%20parveen
   // Input: www.thinkful.com /tauh ida parv een
@@ -90,6 +90,28 @@ function main() {
     }
     return newNumArr;
   };
-  console.log(greaterThanFour([1, 6, 2, 7, 5]));
+  // console.log(greaterThanFour([1, 6, 2, 7, 5]));
+
+  // -------Drill 7-------
+  //Max sum in the array
+
+  function max(arr) {
+    let maxSum = 0;
+    let partialSum = 0;
+    for (let item of arr) {
+      partialSum += item;
+      maxSum = Math.max(maxSum, partialSum);
+      if (partialSum < 0) partialSum = 0;
+    }
+    return maxSum;
+  }
+  console.log(max([4, 6, -3, 5, -2, 1]));
+
+  // -------Drill 8-------
+  //   8. Merge arrays
+  // Imagine you have 2 arrays which have already been sorted. Write an algorithm to merge the 2 arrays into a single array, which should also be sorted.
+
+  // Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
+  // Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
 }
 main();
