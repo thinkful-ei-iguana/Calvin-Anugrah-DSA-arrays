@@ -105,13 +105,45 @@ function main() {
     }
     return maxSum;
   }
-  console.log(max([4, 6, -3, 5, -2, 1]));
+  // console.log(max([4, 6, -3, 5, -2, 1]));
 
   // -------Drill 8-------
   //   8. Merge arrays
   // Imagine you have 2 arrays which have already been sorted. Write an algorithm to merge the 2 arrays into a single array, which should also be sorted.
 
+  const Merge = (arr1, arr2) => {
+    let totalArr = [];
+    const arrSum = arr1.length + arr2.length;
+    for (let i = 0; i < arrSum; i++)
+      if (arr1[0] <= arr2[0]) {
+        totalArr.push(arr1[0]);
+        arr1.shift();
+      } else if (!arr2[0]) {
+        totalArr.push(arr1[0]);
+        arr1.shift();
+      } else if (!arr1[0]) {
+        totalArr.push(arr2[0]);
+        arr2.shift();
+      } else {
+        totalArr.push(arr2[0]);
+        arr2.shift();
+      }
+
+    // compare
+    // .shift()
+    return totalArr;
+  };
+  // console.log(Merge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10, 23, 24]));
   // Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
   // Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
+
+  // -------Drill 9-------
+  //   Remove characters
+  // Write an algorithm that deletes given characters from a string. For example, given a string of "Battle of the Vowels: Hawaii vs. Grozny" and the characters to be removed are "aeiou", the algorithm should transform the original string to "Bttl f th Vwls: Hw vs. Grzny". Do not use Javascript's filter, split, or join methods.
+
+  // Input:'Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'
+  // Output: 'Bttl f th Vwls: Hw vs. Grzny'
+
+  const 
 }
 main();
