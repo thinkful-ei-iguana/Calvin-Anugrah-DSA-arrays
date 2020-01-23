@@ -1,4 +1,4 @@
-import Array from "./Array";
+const Array = require("./documentation-array");
 // What is the length, capacity and memory address of your array?
 // Add the following in the main function and then print the array:
 //     ...
@@ -16,7 +16,24 @@ function main() {
   let arr = new Array();
 
   // Add an item to the array
-  arr.push(3);
 
-  console.log(arr);
+  arr.push(3);
+  arr.push(5);
+  arr.push(15);
+  arr.push(19);
+  arr.push(45);
+  arr.push(10);
+
+  console.log(arr.get(0));
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  console.log("arr is ", arr);
+
+  console.log("arr is ", arr);
 }
+
+main();
