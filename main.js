@@ -144,44 +144,45 @@ function main() {
   // Input:'Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'
   // Output: 'Bttl f th Vwls: Hw vs. Grzny'
 
+  // loop through vowels, index[i] (1) at this point (which will be "a")
+  // => loop through stringChar, check EACH stringChar[i] !== vowels[v], if truthy push, if falsy ignore
+  // iterate vowels[v]
+  // loop stringChar, check
+  // return stringOutput
   const removeChar = (stringChar, vowels) => {
-    // loop through vowels, index[i] (1) at this point (which will be "a")
-    // => loop through stringChar, check EACH stringChar[i] !== vowels[v], if truthy push, if falsy ignore
-    // iterate vowels[v]
-    // loop stringChar, check
-    // return stringOutput
-    // var str = "Hello World";
-    // str = str.slice(0, 3) + str.slice(4);
-    // console.log(str);
-
-    for (let v = 0; v < vowels.length; v++)
-      for (let i = 0; i < stringChar.length; i++)
-        if (stringChar[i] === vowels[v]) {
-          stringChar = stringChar.slice(i) + stringChar.slice(i + 1);
+    let newString = stringChar;
+    for (let v = 0; v < vowels.length; v++) {
+      for (let i = 0; i < newString.length; i++) {
+        if (newString[i] === vowels[v]) {
+          newString = newString.slice(0, i) + newString.slice(i + 1);
+          i--;
         }
-    console.log(stringChar);
-    return stringChar;
-
-    // const per vowel?
-    // if vowelReplace === stringChar.indexOf()
-
-    // indexOf()
-
-    // const spaceReplace = Input => {
-    //   const replace = "%20";
-    //   const Output = [];
-    //   for (let i = 0; i < Input.length; i++) {
-    //     if (Input[i] !== " ") {
-    //       Output.push(Input[i]);
-    //     } else {
-    //       Output.push(replace);
-    //     }
-    //   }
-    //   let stringReplaced = Output.join("");
-    //   return stringReplaced;
-    //   // input has any space characters, replace with %20
-    // };
+      }
+    }
+    console.log(newString);
+    return newString;
   };
-  console.log(removeChar("Battle of the Vowels: Hawaii vs. Grozny", "aeiou"));
+  // console.log(removeChar("Battle of the Vowels: Hawaii vs. Grozny", "aeiou"));
 }
+
 main();
+
+// const per vowel?
+// if vowelReplace === stringChar.indexOf()
+
+// indexOf()
+
+// const spaceReplace = Input => {
+//   const replace = "%20";
+//   const Output = [];
+//   for (let i = 0; i < Input.length; i++) {
+//     if (Input[i] !== " ") {
+//       Output.push(Input[i]);
+//     } else {
+//       Output.push(replace);
+//     }
+//   }
+//   let stringReplaced = Output.join("");
+//   return stringReplaced;
+//   // input has any space characters, replace with %20
+// };
